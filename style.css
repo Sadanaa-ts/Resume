@@ -1,6 +1,3 @@
-/* =========================================
-   1. GLOBAL RESET & EDITORIAL TYPOGRAPHY
-   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -29,9 +26,6 @@ a {
     transition: all 0.25s ease;
 }
 
-/* =========================================
-   2. MINIMALIST TOP HEADER
-   ========================================= */
 #top-nav {
     position: sticky;
     top: 0;
@@ -58,7 +52,7 @@ a {
 .brand-dot {
     width: 12px;
     height: 12px;
-    background-color: #a5b4fc; /* Soft periwinkle accent from reference */
+    background-color: #a5b4fc;
     display: inline-block;
 }
 
@@ -92,9 +86,6 @@ a {
     color: #6366f1;
 }
 
-/* =========================================
-   3. SPLIT HERO & FLOATING PROFILE CARD
-   ========================================= */
 .hero-split {
     position: relative;
     min-height: 580px;
@@ -104,7 +95,6 @@ a {
     overflow: hidden;
 }
 
-/* Dark Purple-Black Left Panel */
 .hero-left-bg {
     position: absolute;
     top: 0;
@@ -127,7 +117,6 @@ a {
     padding-left: 12%;
 }
 
-/* Floating Dark Card Overlapping the Split */
 .profile-card {
     width: 310px;
     flex-shrink: 0;
@@ -183,7 +172,6 @@ a {
     text-transform: uppercase;
 }
 
-/* Light Periwinkle LinkedIn Bottom Strip */
 .card-social-bar {
     display: block;
     background-color: #cbd5e1;
@@ -198,7 +186,6 @@ a {
     background-color: #a5b4fc;
 }
 
-/* Right Editorial Column */
 .hero-right-content {
     max-width: 520px;
 }
@@ -219,7 +206,6 @@ a {
     line-height: 1.5;
 }
 
-/* Pill-Shaped Outline Buttons */
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -248,9 +234,6 @@ a {
     line-height: 1.75;
 }
 
-/* =========================================
-   4. RESUME TIMELINE SECTIONS
-   ========================================= */
 .resume-section {
     background-color: #fafafa;
     padding: 5rem 2rem;
@@ -320,7 +303,6 @@ a {
     color: #475569;
 }
 
-/* Skills Pills */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -337,9 +319,6 @@ a {
     color: #1e293b;
 }
 
-/* =========================================
-   5. FOOTER
-   ========================================= */
 .site-footer {
     background-color: #ffffff;
     padding: 2.5rem 3rem;
@@ -376,7 +355,6 @@ a {
     color: #4f46e5;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 850px) {
     .hero-left-bg {
         width: 100%;
