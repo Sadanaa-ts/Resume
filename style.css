@@ -1,5 +1,5 @@
 /* =========================================
-   1. ELEMENT SELECTORS & GLOBAL RESET
+   1. GLOBAL RESET & EDITORIAL TYPOGRAPHY
    ========================================= */
 * {
     margin: 0;
@@ -13,185 +13,385 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f4f7f9;
-    color: #1e293b;
-    line-height: 1.6;
+    background-color: #ffffff;
+    color: #2b2b2b;
+    line-height: 1.7;
 }
 
-h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
-    color: #0f172a;
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #0d9488;
-    padding-bottom: 0.4rem;
-    display: inline-block;
+h1, h2, .brand-name {
+    font-family: 'Playfair Display', serif;
+    color: #18181b;
 }
 
 a {
     text-decoration: none;
-    color: #0d9488;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #0f766e;
+    color: inherit;
+    transition: all 0.25s ease;
 }
 
 /* =========================================
-   2. ID SELECTORS & STICKY NAVIGATION
+   2. MINIMALIST TOP HEADER
    ========================================= */
-#navbar {
+#top-nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #0f172a;
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid #f1f5f9;
 }
 
-#contact {
-    background-color: #0f172a;
-    color: #f8fafc;
-    text-align: center;
-    padding: 2.5rem 1rem;
-    margin-top: 3rem;
-}
-
-#contact h2 {
-    color: #ffffff;
-    border-bottom-color: #14b8a6;
-}
-
-#contact a {
-    color: #5eead4;
-}
-
-/* =========================================
-   3. CLASS SELECTORS & LAYOUT STRUCTURE
-   ========================================= */
-.container {
-    max-width: 900px;
+.nav-wrapper {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.nav-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #ffffff;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
 }
 
-.nav-links {
+.brand-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #a5b4fc; /* Soft periwinkle accent from reference */
+    display: inline-block;
+}
+
+.brand-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.brand-role {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.nav-menu {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.nav-links a {
-    color: #cbd5e1;
+.nav-menu a {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: #475569;
     font-weight: 500;
-    font-size: 0.95rem;
 }
 
-.nav-links a:hover {
-    color: #5eead4;
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #6366f1;
 }
 
-.hero {
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+/* =========================================
+   3. SPLIT HERO & FLOATING PROFILE CARD
+   ========================================= */
+.hero-split {
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    padding: 4rem 2rem;
+    overflow: hidden;
+}
+
+/* Dark Purple-Black Left Panel */
+.hero-left-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 25%, #23142c 0%, #0d0c11 75%);
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1050px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+    padding-left: 12%;
+}
+
+/* Floating Dark Card Overlapping the Split */
+.profile-card {
+    width: 310px;
+    flex-shrink: 0;
+    background-color: #1f1f23;
     color: #ffffff;
+    box-shadow: -12px 18px 40px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
-    padding: 4.5rem 1.5rem;
-    margin-bottom: 2.5rem;
 }
 
-.hero h1 {
-    color: #ffffff;
+.card-body {
+    padding: 3rem 2rem 2.5rem;
+}
+
+.avatar-circle {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 1.6rem;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #3f3f46, #18181b);
+    border: 2px solid #52525b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    color: #e4e4e7;
+    letter-spacing: 0.05em;
 }
 
-.subtitle {
-    font-size: 1.1rem;
-    color: #cbd5e1;
-    margin-bottom: 0.5rem;
-}
-
-.location {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-}
-
-.btn-primary {
-    display: inline-block;
-    background-color: #0d9488;
+.card-name {
+    font-family: 'Playfair Display', serif;
     color: #ffffff;
-    padding: 0.7rem 1.6rem;
-    border-radius: 6px;
-    font-weight: 600;
+    font-size: 1.65rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
 }
 
-.btn-primary:hover {
-    background-color: #14b8a6;
-    color: #ffffff;
+.card-divider {
+    width: 40px;
+    height: 2px;
+    background-color: #a5b4fc;
+    margin: 0 auto 1.2rem;
 }
 
-.card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 2rem;
-    margin-bottom: 1.8rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid #0d9488;
+.card-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    color: #a1a1aa;
+    line-height: 1.7;
+    text-transform: uppercase;
 }
 
-.edu-item, .project-item {
+/* Light Periwinkle LinkedIn Bottom Strip */
+.card-social-bar {
+    display: block;
+    background-color: #cbd5e1;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 0.85rem 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.card-social-bar:hover {
+    background-color: #a5b4fc;
+}
+
+/* Right Editorial Column */
+.hero-right-content {
+    max-width: 520px;
+}
+
+.welcome-heading {
+    font-size: 4.2rem;
+    font-weight: 500;
+    line-height: 1.1;
     margin-bottom: 1.2rem;
+    color: #1e293b;
 }
 
-.edu-item:last-child, .project-item:last-child {
-    margin-bottom: 0;
+.hero-lead {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
 }
 
-.meta {
-    font-size: 0.9rem;
+/* Pill-Shaped Outline Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-pill {
+    display: inline-block;
+    padding: 0.55rem 1.5rem;
+    border: 1px solid #64748b;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.btn-pill:hover {
+    background-color: #1f1f23;
+    border-color: #1f1f23;
+    color: #ffffff;
+}
+
+.hero-bio {
+    font-size: 0.92rem;
+    color: #475569;
+    line-height: 1.75;
+}
+
+/* =========================================
+   4. RESUME TIMELINE SECTIONS
+   ========================================= */
+.resume-section {
+    background-color: #fafafa;
+    padding: 5rem 2rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-block {
+    margin-bottom: 4rem;
+}
+
+.section-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.resume-row {
+    display: flex;
+    gap: 3rem;
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.row-left {
+    width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-date {
     font-weight: 600;
-    color: #0d9488;
+    color: #4f46e5;
+    font-size: 0.9rem;
     margin-bottom: 0.3rem;
 }
 
-.skills-grid {
-    margin-top: 0.5rem;
+.row-org {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1e293b;
 }
 
-.skill-badge {
+.row-loc {
+    font-size: 0.82rem;
+    color: #64748b;
+}
+
+.row-right h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+}
+
+.row-right p {
+    font-size: 0.92rem;
+    color: #475569;
+}
+
+/* Skills Pills */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-pill {
     display: inline-block;
-    background-color: #e0f2fe;
-    color: #0369a1;
-    padding: 0.45rem 0.95rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin: 0.3rem 0.4rem 0.3rem 0;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    background-color: #ffffff;
+    font-size: 0.85rem;
+    color: #1e293b;
 }
 
-.copyright {
-    margin-top: 1rem;
+/* =========================================
+   5. FOOTER
+   ========================================= */
+.site-footer {
+    background-color: #ffffff;
+    padding: 2.5rem 3rem;
+    border-top: 1px solid #e2e8f0;
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: #64748b;
+}
+
+.footer-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-right {
+    display: flex;
+    gap: 3rem;
+}
+
+.footer-right div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-right strong {
+    color: #0f172a;
+    margin-bottom: 0.2rem;
+}
+
+.footer-right a:hover {
+    color: #4f46e5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 850px) {
+    .hero-left-bg {
+        width: 100%;
+        height: 280px;
+    }
+    .hero-container {
+        flex-direction: column;
+        padding-left: 0;
+        text-align: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .resume-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
